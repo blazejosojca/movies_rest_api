@@ -9,16 +9,9 @@ class PersonAdmin(admin.ModelAdmin):
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ['title',
-                    'description',
-                    'director',
-                    'actors',
-                    'year',
-                    'ranking']
+    list_display = ['__str__']
 
 
 @admin.register(Role)
 class RoleAdmin(admin.ModelAdmin):
-    list_display = ['movie',
-                    'person',
-                    'role']
+    list_display = ['role']

@@ -39,7 +39,7 @@ class Movie(models.Model):
     actors = models.ManyToManyField(Person, through='Role')
     year = models.IntegerField()
     ranking = models.IntegerField(choices=MOVIE_RANK)
-    genre = models.IntegerField(choices=GENRE)
+    genre = models.CharField(max_length=128, choices=GENRE)
 
     def __str__(self):
         return self.title
