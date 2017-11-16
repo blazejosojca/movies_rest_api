@@ -4,7 +4,7 @@ from .models import Movie, Person
 from .serializers import MovieSerializer
 
 
-class ApiMovieDetailView(APIView):
+class ApiMovieView(APIView):
 
     def get_object(self, pk):
         try:
@@ -22,7 +22,7 @@ class ApiMovieDetailView(APIView):
         pass
 
 
-class ApiMovieListView(APIView):
+class ApiMoviesListView(APIView):
 
     def get(self, request):
         movies = Movie.objects.all()
