@@ -8,7 +8,7 @@ class ApiMovieDetailView(APIView):
 
     def get_object(self, pk):
         try:
-            return Movie.objects.all()
+            return Movie.objects.get(pk=pk)
         except Movie.DoesNotExist:
             raise Http404
 
@@ -24,8 +24,9 @@ class ApiMovieDetailView(APIView):
 
 class ApiMovieListView(APIView):
 
-    def get(selfself, request):
+    def get(self, request):
         movies = Movie.objects.all()
-        serializer = Kj
+        serializer = MovieSerializer(movies, many=True)
+        return Response(serializer.data)
 
 
