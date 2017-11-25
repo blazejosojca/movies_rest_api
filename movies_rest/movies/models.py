@@ -1,4 +1,5 @@
 from django.db import models
+from persons.models import Person
 
 MOVIE_RANK = (
     (1, "very bad"),
@@ -18,16 +19,6 @@ GENRE = (
     ('adult', "adult"),
     ('cartoon', "cartoon"),
 )
-
-
-class Person(models.Model):
-    first_name = models.CharField(max_length=64)
-    last_name = models.CharField(max_length=64)
-
-    def __str__(self):
-        return "{} {}".format(self.first_name,
-                              self.last_name)
-
 
 
 class Movie(models.Model):

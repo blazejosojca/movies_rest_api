@@ -1,10 +1,5 @@
 from django.contrib import admin
-from .models import Person, Movie, Role
-
-
-@admin.register(Person)
-class PersonAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name']
+from .models import Movie, Role
 
 
 @admin.register(Movie)
