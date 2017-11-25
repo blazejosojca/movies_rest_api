@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from movies.models import Movie
+from movies.models import Movie, Role
 from persons.serializers import PersonSerializer
 
 
@@ -18,3 +18,9 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
                   'ranking',
                   'genre')
 
+
+class RoleSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = Role
+        fields = '__all__'
